@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'ibm_3270regular';
+    src: url('../fonts/3270-regular.woff2') format('woff2'),
+    url('../fonts/3270-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'ibm_3270regular' !important;
+    font-size: 1.2rem !important;
+}
