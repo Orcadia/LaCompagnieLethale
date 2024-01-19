@@ -11,11 +11,16 @@ $router->dispatch($url);
 class Router
 {
     private array $routes = [
-        '/' => 'HomepageController::home',
-        '/login' => 'AuthController::login',
+        '/'         => 'HomepageController::home',
+        '/login'    => 'AuthController::login',
+        '/register' => 'AuthController::register',
+        '/wiki'     => 'HomepageController::wiki',
+        '/forum'    => 'HomepageController::forum',
+        '/boombox'  => 'HomepageController::boombox',
+        '/about'    => 'HomepageController::about',
     ];
 
-    public function dispatch($path): void
+    public function dispatch($path): void   // void = return nothing
     {
         try {
             session_start();
