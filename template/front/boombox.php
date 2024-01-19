@@ -3,9 +3,7 @@
 <?php ob_start(); ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a href="/">
-                <img src="../../public/images/Site-logo.webp" width="174" height="80">
-            </a>
+            <a href="/"><img src="../../public/images/Site-logo.webp" width="174" height="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,8 +41,8 @@
             </div>
         </div>
     </nav>
-    <h1 class="text-center">Homepage</h1>
-    <p class="text-center">Contenu de la page d'accueil</p>
+    <h1 class="text-center">Boombox</h1>
+    <p class="text-center"></p>
 
 
 <?php $body = ob_get_clean(); ?>
