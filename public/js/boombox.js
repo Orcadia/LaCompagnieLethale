@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // (B2) PLAY SELECTED SONG
         audPlay = (idx, nostart) => {
             audNow = idx;
-            audStart = !notstart : true;
+            audStart = !nostart;
             audio.src = encodeURI(playlist[idx]["src"]);
             for (let i in playlist) {
                 if (i === idx) { playlist[i]["row"].classList.add("now"); }
