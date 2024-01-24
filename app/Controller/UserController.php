@@ -23,7 +23,37 @@ class UserController
 
     public function login()
     {
-        $this->view('/login');
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        $data = [
+            'username_email' => isset($_POST['username_email']) ? trim($_POST['username_email']) : '',
+            'password' => isset($_POST['password']) ? trim($_POST['password']) : '',
+            'username_email_err' => '',
+            'password_err' => ''
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Validate username/email
+            if (empty($data['username_email'])) {
+                $data['username_email_err'] = 'Please enter username or email';
+            }
+
+            // Validate password
+            if (empty($data['password'])) {
+                $data['password_err'] = 'Please enter password';
+            }
+
+            // Check for user
+            if ($this->model->loginUser($data['username_email'], $data['password'])) {
+                $_SESSION['user_id'] = $this->model->getIdByUsernameOrEmail($data['username_email']);
+                header('location: /');
+                exit();
+            } else {
+                $data['password_err'] = 'Password incorrect';
+            }
+        }
+
+        $this->view('/login', $data);
     }
 
     public function register()
@@ -112,6 +142,30 @@ class UserController
 
         $this->view('/register', $data);
     }
+
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+        header('location: /login');
+        exit();
+    }
+
+    public function profile()
+    {
+        if (!isset($_SESSION['user_id'])) {
+            header('location: /login');
+            exit();
+        }
+
+        $user = $this->model->getUserById($_SESSION['user_id']);
+        $data = [
+            'username' => $user->username,
+            'email' => $user->email
+        ];
+
+        $this->view('profile', $data);
+    }
 }
 
 $init = new UserController;
@@ -121,6 +175,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         switch ($_POST['type']) {
             case 'register':
                 $init->register();
+                break;
+            case 'login':
+                $init->login();
+                break;
+            case 'logout':
+                $init->logout();
                 break;
         }
     }

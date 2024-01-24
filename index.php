@@ -18,6 +18,8 @@ class Router
         '/about'        => 'HomepageController::about',
         '/login'        => 'UserController::login',
         '/register'     => 'UserController::register',
+        '/logout'       => 'UserController::logout',
+        '/profile'      => 'UserController::profile',
     ];
 
     public function dispatch($path): void   // void = return nothing
