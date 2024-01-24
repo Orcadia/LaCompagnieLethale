@@ -5,7 +5,7 @@
     <script defer src="../../public/js/boombox.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a href="/"><img src="../../public/images/Site-logo.webp" width="174" height="80"></a>
+            <a href="/"><img src="../../public/images/Site-logo.webp" width="174" height="80" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,11 +60,11 @@
         </div>
 
         <!-- (C) SEEK BAR -->
-        <input id="aSeek" type="range" min="0" value="0" step="1" disabled>
+        <label for="aSeek"></label><input id="aSeek" type="range" min="0" value="0" step="1" disabled>
 
         <!-- (D) VOLUME SLIDE -->
         <span id="aVolIco" class="material-icons">volume_up</span>
-        <input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled>
+        <label for="aVolume"></label><input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled>
 
         <!-- (E) PLAYLIST -->
         <div id="aList"></div>
