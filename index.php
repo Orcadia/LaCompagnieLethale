@@ -1,7 +1,7 @@
 <?php
 
 include_once('app/Controller/HomepageController.php');
-include_once('app/Controller/AuthController.php');
+include_once('app/Controller/UserController.php');
 
 $router = new Router();
 
@@ -11,13 +11,13 @@ $router->dispatch($url);
 class Router
 {
     private array $routes = [
-        '/'         => 'HomepageController::home',
-        '/login'    => 'AuthController::login',
-        '/register' => 'AuthController::register',
-        '/wiki'     => 'HomepageController::wiki',
-        '/forum'    => 'HomepageController::forum',
-        '/boombox'  => 'HomepageController::boombox',
-        '/about'    => 'HomepageController::about',
+        '/'             => 'HomepageController::home',
+        '/wiki'         => 'HomepageController::wiki',
+        '/forum'        => 'HomepageController::forum',
+        '/boombox'      => 'HomepageController::boombox',
+        '/about'        => 'HomepageController::about',
+        '/login'        => 'UserController::login',
+        '/register'     => 'UserController::register',
     ];
 
     public function dispatch($path): void   // void = return nothing
