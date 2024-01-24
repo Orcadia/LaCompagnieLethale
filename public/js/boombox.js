@@ -36,10 +36,10 @@ window.addEventListener("DOMContentLoaded", () => {
         // (B2) PLAY SELECTED SONG
         audPlay = (idx, nostart) => {
             audNow = idx;
-            audStart = nostart ? false : true;
+            audStart = !notstart : true;
             audio.src = encodeURI(playlist[idx]["src"]);
             for (let i in playlist) {
-                if (i == idx) { playlist[i]["row"].classList.add("now"); }
+                if (i === idx) { playlist[i]["row"].classList.add("now"); }
                 else { playlist[i]["row"].classList.remove("now"); }
             }
         };
@@ -117,13 +117,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // (F) VOLUME
     aVolIco.addEventListener("click", () => {
-        audio.volume = audio.volume==0 ? 1 : 0 ;
+        audio.volume = audio.volume===0 ? 1 : 0 ;
         aVolume.value = audio.volume;
-        aVolIco.innerHTML = (aVolume.value==0 ? "volume_mute" : "volume_up");
+        aVolIco.innerHTML = (aVolume.value===0 ? "volume_mute" : "volume_up");
     });
     aVolume.addEventListener("change", () => {
         audio.volume = aVolume.value;
-        aVolIco.innerHTML = (aVolume.value==0 ? "volume_mute" : "volume_up");
+        aVolIco.innerHTML = (aVolume.value===0 ? "volume_mute" : "volume_up");
     });
 
     // (G) ENABLE/DISABLE CONTROLS
