@@ -2,6 +2,7 @@
 
 include_once('app/Controller/HomepageController.php');
 include_once('app/Controller/UserController.php');
+include_once('app/Controller/ConfigController.php');
 
 $router = new Router();
 
@@ -20,6 +21,7 @@ class Router
         '/register'     => 'UserController::register',
         '/logout'       => 'UserController::logout',
         '/profile'      => 'UserController::profile',
+        '/BoomboxConfig' => 'ConfigController::getSongs',
     ];
 
     public function dispatch($path): void   // void = return nothing
