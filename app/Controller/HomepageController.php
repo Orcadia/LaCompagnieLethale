@@ -14,7 +14,7 @@ class HomepageController
 
     public  function forum()
     {
-
+        require_once ('template/front/forum.php');
     }
 
     public function boombox()
@@ -24,6 +24,6 @@ class HomepageController
 
     public function about()
     {
-
+        require_once ('template/front/about.php');
     }
 }

@@ -2,6 +2,7 @@
 
 include_once('app/Controller/HomepageController.php');
 include_once('app/Controller/UserController.php');
+include_once('app/Controller/ForumController.php');
 
 $router = new Router();
 
@@ -13,7 +14,7 @@ class Router
     private array $routes = [
         '/'             => 'HomepageController::home',
         '/wiki'         => 'HomepageController::wiki',
-        '/forum'        => 'HomepageController::forum',
+        '/forum'        => 'ForumController::listTopics',
         '/boombox'      => 'HomepageController::boombox',
         '/about'        => 'HomepageController::about',
         '/login'        => 'UserController::login',
@@ -29,6 +30,12 @@ class Router
 
             if (!isset($this->routes[$path])) {
                 throw new Exception('Route not found', 404);
+            }
+
+            // Check if the path is /forum and if a user is not connected
+            if ($path === '/forum' && !isset($_SESSION['user_id'])) {
+                header('location: /login');
+                exit();
             }
 
             $route = $this->routes[$path];
