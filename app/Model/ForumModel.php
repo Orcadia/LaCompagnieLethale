@@ -16,4 +16,13 @@ class ForumModel
         $results = $this->db->resultSet();
         return $results;
     }
+
+    public function getTopicById($id)
+    {
+        $this->db->query('SELECT u.username, p.message, p.created, t.subject FROM forum_posts AS p LEFT JOIN forum_topics as t ON t.topic_id = p.topic_id LEFT JOIN users AS u on u.user_id = p.user_id WHERE p.topic_id = :id ORDER BY p.created ASC;');
+        $this->db->bind(':id', $id);
+        $result = $this->db->resultSet();
+        var_dump($result);
+        return $result;
+    }
 }

@@ -6,7 +6,7 @@
     <ul>
         <?php foreach ($topics as $topic): ?>
             <li>
-                <a href="topic.php?id=<?php echo $topic->topic_id; ?>">
+                <a href="/topic?id=<?php echo $topic->topic_id; ?>" id="<?php echo $topic->topic_id; ?>">
                     <?php echo $topic->subject; ?>
                      -
                     <?php echo $topic->username; ?>
