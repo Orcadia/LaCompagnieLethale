@@ -14,7 +14,7 @@
     <?php if (isset($stylesheet)) echo $stylesheet ?>
     <?php if (isset($javascript)) echo $javascript ?>
 </head>
-<body>
+<body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a href="/">
@@ -70,5 +70,6 @@
 </nav>
 
 <?php if (isset($body)) echo $body ?>
+
 </body>
 </html>

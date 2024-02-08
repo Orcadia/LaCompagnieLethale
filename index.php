@@ -22,6 +22,8 @@ class Router
         '/logout'       => 'UserController::logout',
         '/profile'      => 'UserController::profile',
         '/topic'        => 'ForumController::showTopic',
+        '/createTopic'  => 'ForumController::createTopic',
+        '/response'     => 'ForumController::createResponse'
     ];
 
     public function dispatch($path): void   // void = return nothing
