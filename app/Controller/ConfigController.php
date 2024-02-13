@@ -5,4 +5,9 @@ class ConfigController
     {
         require_once ('config/TopicConfig.php');
     }
+
+    public function getSongs()
+    {
+        include_once('config/BoomboxConfig.php');
+    }
 }

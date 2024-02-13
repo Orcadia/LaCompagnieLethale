@@ -26,6 +26,7 @@ class Router
         '/createTopic'  => 'ForumController::createTopic',
         '/response'     => 'ForumController::createResponse',
         '/TopicConfig'   => 'ConfigController::topicConfig',
+        '/BoomboxConfig' => 'ConfigController::getSongs',
     ];
 
     public function dispatch($path): void   // void = return nothing
