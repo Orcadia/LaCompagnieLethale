@@ -1,29 +1,29 @@
-document.getElementById('responseForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', (event) => {
+    const form = document.getElementById('responseForm');
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    var response = document.getElementById('response').value;
+            let formData = new FormData(this);
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/response', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-
-            if(response.success) {
-                var newResponseDiv = document.createElement('div');
-                newResponseDiv.textContent = responseText;
-                document.getElementById('listOfResponses').appendChild(newResponseDiv);
-
-                // Clear the textarea
-                document.getElementById('responseText').value = '';
-            } else {
-                // Handle error
-                console.error(response.error);
-            }
-        }
-    };
-
-    xhr.send('response=' + encodeURIComponent(responseText));
+            fetch('/TopicConfig', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // After successfully submitting the form, reload the page
+                    location.reload();
+                })
+                .catch((error) => {
+                    // Log any errors with the fetch request or response handling
+                    console.error('Error:', error);
+                });
+        });
+    }
 });

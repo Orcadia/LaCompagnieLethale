@@ -73,15 +73,4 @@ class ForumController
         }
         require_once ('template/front/createTopic.php');
     }
-
-    public function createResponse()
-    {
-        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $response = isset($_POST['response']) ? trim($_POST['response']) : '';
-
-        $this->forumModel->createResponse($response);
-
-        header('Content-Type: application/json');
-        echo json_encode(['success' => true]);
-    }
 }

@@ -19,7 +19,7 @@ class ForumModel
 
     public function getTopicById($id)
     {
-        $this->db->query('SELECT u.username, p.message, p.created, t.subject FROM forum_posts AS p LEFT JOIN forum_topics as t ON t.topic_id = p.topic_id LEFT JOIN users AS u on u.user_id = p.user_id WHERE p.topic_id = :id ORDER BY p.created ASC;');
+        $this->db->query('SELECT u.username, p.message, p.created, t.subject, p.topic_id  FROM forum_posts AS p LEFT JOIN forum_topics as t ON t.topic_id = p.topic_id LEFT JOIN users AS u on u.user_id = p.user_id WHERE p.topic_id = :id ORDER BY p.created ASC;');
         $this->db->bind(':id', $id);
         $result = $this->db->resultSet();
         //var_dump($result);
@@ -58,22 +58,19 @@ class ForumModel
         }
     }
 
-    public function createResponse($data)
+    public function createResponse($topic_id, $user_id, $message, $created)
     {
-        // Decode HTML entities in the message
-        $data['message'] = html_entity_decode($data['message'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-
-        // First query
-        $this->db->query('INSERT INTO forum_posts (topic_id, message, user_id, created) VALUES (:topic_id, :message, :user_id, :created)');
-        $this->db->bind(':topic_id', $data['topic_id']);
-        $this->db->bind(':user_id', $data['user_id']);
-        $this->db->bind(':message', $data['message']);
-        $this->db->bind(':created', $data['created']);
+        $this->db->query('INSERT INTO forum_posts (message, topic_id, user_id, created) VALUES (:message, :topic_id, :user_id, :created)');
+        $this->db->bind(':topic_id', $topic_id);
+        $this->db->bind(':user_id', $user_id);
+        $this->db->bind(':message', $message);
+        $this->db->bind(':created', $created);
         $this->db->execute();
 
         // Check if the query was successful
         if($this->db->rowCount() > 0){
-            return true;
+            // Return the inserted message
+            return $message;
         } else {
             return false;
         }

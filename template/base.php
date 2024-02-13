@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <?php if (isset($stylesheet)) echo $stylesheet ?>
     <?php if (isset($javascript)) echo $javascript ?>
 </head>

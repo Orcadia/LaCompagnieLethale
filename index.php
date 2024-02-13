@@ -3,6 +3,7 @@
 include_once('app/Controller/HomepageController.php');
 include_once('app/Controller/UserController.php');
 include_once('app/Controller/ForumController.php');
+include_once('app/Controller/ConfigController.php');
 
 $router = new Router();
 
@@ -23,7 +24,8 @@ class Router
         '/profile'      => 'UserController::profile',
         '/topic'        => 'ForumController::showTopic',
         '/createTopic'  => 'ForumController::createTopic',
-        '/response'     => 'ForumController::createResponse'
+        '/response'     => 'ForumController::createResponse',
+        '/TopicConfig'   => 'ConfigController::topicConfig',
     ];
 
     public function dispatch($path): void   // void = return nothing
