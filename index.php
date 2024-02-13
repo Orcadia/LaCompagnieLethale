@@ -15,6 +15,9 @@ class Router
     private array $routes = [
         '/'             => 'HomepageController::home',
         '/wiki'         => 'HomepageController::wiki',
+        '/bestiaire'    => 'HomepageController::bestiaire',
+        '/lunes'        => 'HomepageController::lunes',
+        '/forum'        => 'HomepageController::forum',
         '/forum'        => 'ForumController::listTopics',
         '/boombox'      => 'HomepageController::boombox',
         '/about'        => 'HomepageController::about',

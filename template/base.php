@@ -33,9 +33,9 @@
                         Wiki
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/wiki/Accueil">Accueil</a></li>
-                        <li><a class="dropdown-item" href="/wiki/lunes">Lunes</a></li>
-                        <li><a class="dropdown-item" href="/wiki/bestiaire">Bestiaire</a></li>
+                        <li><a class="dropdown-item" href="/wiki">Accueil</a></li>
+                        <li><a class="dropdown-item" href="/lunes">Lunes</a></li>
+                        <li><a class="dropdown-item" href="/bestiaire">Bestiaire</a></li>
                         <li><a class="dropdown-item" href="#">...</a></li>
                     </ul>
                 </li>
