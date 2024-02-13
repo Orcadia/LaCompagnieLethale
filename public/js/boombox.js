@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         // (B5) INIT SET FIRST SONG
-        audPlay(0, true);
+        // audPlay(0, true);
 
         // (C) PLAY/PAUSE BUTTON
         // (C1) AUTO SET PLAY/PAUSE TEXT

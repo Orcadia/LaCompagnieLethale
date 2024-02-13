@@ -16,7 +16,7 @@
     <?php if (isset($javascript)) echo $javascript ?>
 </head>
 <body class="<?php echo isset($bodyClass) ? $bodyClass : ''; ?>">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <a href="/">
             <img src="../../public/images/Site-logo.webp" width="174" height="80">
@@ -52,17 +52,17 @@
             <ul class="navbar-nav ms-auto">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success" href="/profile">Profile</a>
+                        <a class="nav-link" href="/profile">Profile</a>
                     </li>
                     <li class="nav-item ps-2">
-                        <a class="nav-link btn btn-outline-success" href="/logout">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success" href="/login">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item ps-2">
-                        <a class="nav-link btn btn-outline-success" href="/register">Register</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
                 <?php endif; ?>
             </ul>

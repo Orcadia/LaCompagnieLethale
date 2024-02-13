@@ -7,21 +7,6 @@ class HomepageController
         require_once ('template/front/home.php');
     }
 
-    public function wiki()
-    {
-        require_once ('template/front/wiki.php');
-    }
-
-    public function bestiaire()
-    {
-        require_once('template/front/bestiaire.php');
-    }
-
-    public function lunes()
-    {
-        require_once('template/front/lunes.php');
-    }
-
     public  function forum()
     {
         require_once ('template/front/forum.php');

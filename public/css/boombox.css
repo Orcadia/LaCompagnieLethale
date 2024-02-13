@@ -1,7 +1,12 @@
+@font-face {
+
+
+}
+
 /* (A) MATERIAL ICONS */
 .material-icons {
     font-size: 28px;
-    color: #efff6a;
+    color: #000;
 }
 
 /* (B) WRAPPER */
@@ -14,7 +19,7 @@
     max-width: 500px;
     padding: 10px;
     border-radius: 10px;
-    background: #484848;
+    background: #fc3e00;
 }
 
 /* (C) PLAY/PAUSE BUTTON */
@@ -28,8 +33,13 @@
 
 /* (D) TIME */
 #aCron {
+    font-family: 'ibm_3270regular';
+    src: url('../fonts/3270-regular.woff2') format('woff2'),
+    url('../fonts/3270-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
     font-size: 14px;
-    color: #cbcbcb;
+    color: #000;
     margin: 0 10px;
 }
 
@@ -52,10 +62,11 @@
 
 /* (E2) CUSTOM SLIDER TRACK */
 #aWrap input[type=range]::-webkit-slider-runnable-track {
-    background: #626262;
+    background: #000;
+    border-radius: 10px;
 }
 #aWrap input[type=range]::-moz-range-track {
-    background: #626262;
+    background: #fff;
 }
 
 /* (E3) CUSTOM SLIDER BUTTON */
@@ -63,13 +74,13 @@
     width: 16px; height: 16px;
     border-radius: 50%;
     border: 0;
-    background: #fff;
+    background: #fc3e00;
 }
 #aWrap input[type=range]::-moz-range-thumb {
     width: 16px; height: 16px;
     border-radius: 50%;
     border: 0;
-    background: #fff;
+    background: #fc3e00;
 }
 
 /* (F) VOLUME */
@@ -80,16 +91,27 @@
 
 /* (G) PLAYLIST */
 #aList {
+    font-family: 'ibm_3270regular';
+    src: url('../fonts/3270-regular.woff2') format('woff2'),
+    url('../fonts/3270-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
     width: 100%;
     padding: 10px;
     margin: 10px;
-    color: #7e7e7e;
-    background: #323232;
+    color: #fc3e00;
+    background: #000;
+}
+
+.aRow:hover {
+    color: #000;
+    background: #fc3e00;
 }
 .aRow {
     cursor: pointer;
     padding: 10px 0;
 }
 .aRow.now {
-    color: #fea;
+    color: #000;
+    background: #fc3e00;
 }

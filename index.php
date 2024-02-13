@@ -4,6 +4,7 @@ include_once('app/Controller/HomepageController.php');
 include_once('app/Controller/UserController.php');
 include_once('app/Controller/ForumController.php');
 include_once('app/Controller/ConfigController.php');
+include_once ('app/Controller/WikiController.php');
 
 $router = new Router();
 
@@ -14,10 +15,9 @@ class Router
 {
     private array $routes = [
         '/'             => 'HomepageController::home',
-        '/wiki'         => 'HomepageController::wiki',
-        '/bestiaire'    => 'HomepageController::bestiaire',
-        '/lunes'        => 'HomepageController::lunes',
-        '/forum'        => 'HomepageController::forum',
+        '/wiki'         => 'WikiController::wiki',
+        '/bestiaire'    => 'WikiController::bestiaire',
+        '/lunes'        => 'WikiController::lunes',
         '/forum'        => 'ForumController::listTopics',
         '/boombox'      => 'HomepageController::boombox',
         '/about'        => 'HomepageController::about',

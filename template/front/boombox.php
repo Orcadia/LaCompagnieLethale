@@ -1,13 +1,12 @@
 <?php $title = 'Boombox'; ?>
 <?php ob_start(); ?>
-    
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../public/css/boombox.css">
-    <script defer src="../../public/js/boombox.js"></script>
-    <h1 class="text-center">Boombox</h1>
-    <p class="text-center"></p>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="../../public/css/boombox.css">
+<script defer src="../../public/js/boombox.js"></script>
+
+<div class="mt-5 d-flex align-items-center justify-content-center">
     <div id="aWrap">
         <!-- (A) PLAY/PAUSE BUTTON -->
         <button id="aPlay" disabled><span id="aPlayIco" class="material-icons">
@@ -29,6 +28,7 @@
         <!-- (E) PLAYLIST -->
         <div id="aList"></div>
     </div>
+</div>
 
 <?php $body = ob_get_clean(); ?>
 
