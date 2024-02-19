@@ -9,13 +9,12 @@ $bodyClass = '';
         <form action="/createTopic" method="post">
             <div class="form-group>
                 <input type="hidden" name="type" value="createTopic">
-                <label for="subject" class="ms-1">>Subject</label>
+                <label for="subject" class="ms-1">>Subject</label><br>
                 <input type="text" class="input-black-green <?= !empty($data['subject_err']) ? 'is-invalid' : ''; ?>" id="subject" name="subject" placeholder="Subject..." value="<?= $data['subject'] ?? ''; ?>">
-                <div class="invalid-feedback"><?= $data['subject_err'] ?? ''; ?></div>
-                <label for="message" class="ms-1">>Message</label>
+                <div class="invalid-feedback"><?= $data['subject_err'] ?? ''; ?></div><br>
+                <label for="message" class="ms-1">>Message</label><br>
                 <textarea class="input-black-green <?= !empty($data['message_err']) ? 'is-invalid' : ''; ?>" id="message" name="message" placeholder="Message..." value="<?= $data['message'] ?? ''; ?>"></textarea>
-                <div class="invalid-feedback"><?= $data['message_err'] ?? ''; ?></div>
-            <br>
+                <div class="invalid-feedback"><?= $data['message_err'] ?? ''; ?></div><br>
                 <button type="submit" class="submit-button">>Create</button>
             </div>
     </div>

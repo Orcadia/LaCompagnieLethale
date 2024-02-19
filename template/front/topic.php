@@ -22,41 +22,10 @@
         <form id="responseForm">
             <input type="hidden" name="topic_id" value="<?php echo $messages[0]->topic_id; ?>">
             <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
-            <textarea class="input-black-green <?= !empty($data['message_err']) ? 'is-invalid' : ''; ?>" id="message" name="message" placeholder="Message..." value="<?= $data['message'] ?? ''; ?>"></textarea>
+            <textarea class="input-black-green <?= !empty($data['message_err']) ? 'is-invalid' : ''; ?>" id="message" name="message" placeholder="Message..." value="<?= $data['message'] ?? ''; ?>"></textarea><br>
             <button type="submit" class="submit-button">Submit</button>
         </form>
     </div>
-</div>
-<?php $body = ob_get_clean(); ?>
-
-<?php require_once('template/base.php'); ?>
-
-<?php
-$title = 'Topics';
-$bodyClass = '';
-?>
-
-<?php ob_start(); ?>
-
-<h1 class="text-center">Topics</h1>
-<?php if (isset($topics)): ?>
-    <a href="/createTopic" class="terminal-clickable ">
-        <div class="terminal-card mb-4">
-            <p>>Create your own topic</p>
-        </div>
-    </a>
-    <?php foreach ($topics as $topic): ?>
-        <a href="/topic?id=<?php echo htmlspecialchars($topic->topic_id, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>"
-           class="terminal-clickable">
-
-            <p>><span class="text-right"><?php echo htmlspecialchars($topic->created); ?></span>
-                <br><?php echo htmlspecialchars(html_entity_decode($topic->username, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')); ?>
-            </p>
-            </div>
-        </a>
-    <?php endforeach; ?>
-
-<?php endif; ?>
 </div>
 <?php $body = ob_get_clean(); ?>
 
