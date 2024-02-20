@@ -124,3 +124,7 @@ body {
     background-color: #4AF626; /* Green background */
     color: #000000; /* Black text */
 }
+
+.invalid-feedback {
+    color: #fc3e00 !important; /* Red text */
+}

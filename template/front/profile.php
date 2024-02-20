@@ -1,10 +1,10 @@
 <?php $title = 'Profile'; ?>
 
 <?php ob_start() ?>
-    <div class="container text-center">
-        <h1>Profile</h1>
-        <p>Username: <?php echo htmlspecialchars($data['username']); ?></p>
-        <p>Email: <?php echo htmlspecialchars($data['email']); ?></p>
+    <div class="col-md-10 mx-auto bg-terminal mt-4">
+        <h1 class="text-center">Profile</h1>
+        <h4 class="ms-1">>Username: <?php echo htmlspecialchars($data['username']); ?></h4>
+        <h4 class="ms-1">>Email: <?php echo htmlspecialchars($data['email']); ?></h4>
     </div>
 <?php $body = ob_get_clean();
 

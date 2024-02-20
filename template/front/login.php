@@ -1,4 +1,4 @@
-<?php $title = 'Register'; ?>
+<?php $title = 'Login'; ?>
 
 <?php ob_start() ?>
 
